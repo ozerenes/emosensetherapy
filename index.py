@@ -1,12 +1,14 @@
 import json
 import openai
 from flask import Flask, request
+from flask_cors import CORS
 from rekognition import analyze_emotions
 
 openai.api_key = "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"
 model_engine = "text-davinci-002"
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/process_image', methods=['POST'])
 def process_image():
