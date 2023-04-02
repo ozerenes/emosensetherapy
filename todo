@@ -1,6 +1,6 @@
--Python tarafındaki hataları çözüp kullanıcın yz ifadesini tanıma (öa)
--Duyguya göre chatgptnin yorumu(öa)
--Backend kurgusunun oluşumu ve endpoint hazırlama(öa)
--Şuankini reacta çevirme(eö)
--Resim gönderme(eö)
--Backende text gönderme(eö)
+-Historyi nasıl tuttğuna bakma ve promta ekleme (öa) - 4 saat
+-database açılması ve kullanıcıların kayıt işlemlerinin yapılması (öa) - 6 saat 
+-Frontendeki gelen responsu gösterme (eö) - 3 saat
+-Frontenden backende kullanıcın girdiği yazıyı gönderme (eö) - 1 saat
+-Sesi backende text olarka gönmderme(eö) - 1 saat
+-Login ve sing up sayfalarının yapılması(eö) - 6 saaat
