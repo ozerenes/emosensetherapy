@@ -40,8 +40,8 @@ export default () => {
                     </div>
                 </div>
                 <div className="chat-footer">
-                    <input className="custom-input" type="text"/>
-                    <div>
+                    <input className="custom-input" type="text" placeholder="Lütfen bana yazınız"/>
+                    <div className="input-container">
                         <input type="file" onChange={handleFileChange} />
                         <button onClick={handleSubmit}>Gönder</button>
                     </div>

@@ -12,6 +12,12 @@ html {
 
 main {
   padding: 0 14em;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 45px;
 }
 
 .header {
@@ -99,7 +105,7 @@ main {
   align-items: center;
   width: 100%;
   height: calc(100vh - 320px);
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
 }
 
@@ -129,9 +135,6 @@ button {
 
 .gray-area {
   width: fit-content;
-  padding: 15px;
-  background-color: #1d1d1d;
-  border-radius: 5px;
   position: relative;
 }
 
@@ -140,15 +143,39 @@ button {
   width: 100%;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  background-color: #838383;
 }
 
 input.custom-input {
   border: none;
   background-color: #838383;
-  border-radius: 10px;
   font-size: 20px;
   min-height: 45px;
   color: #000;
   padding-left: 15px;
+}
+
+.custom-input::placeholder {
+  color: #000;
+}
+
+.input-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-container input {
+  background: #838383;
+  color: #000;
+  border-radius: 5px;
+  width: 200px;
+  padding: 15px 0;
+}
+
+.input-container button {
+  height: 100%;
+  background: #838383;
+  border-radius: 50%;
+  width: 80px;
 }

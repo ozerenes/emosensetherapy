@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Chat from '@/components/Chat';
+import Avatar from '@/components/Avatar';
 import Writer from '@/components/Writer';
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -14,7 +15,8 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
             <Writer text={text} color={"#fff"} />
-            <Chat />
+            <Avatar />
+            <Link href={"/ChatAi"}>Talk</Link>
         </>
     )
 }
