@@ -7,7 +7,7 @@
 html {
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: #34374C;
 }
 
 main {
@@ -24,21 +24,38 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 1px 2px 4px 1px #000;
-  background-color: #ffffff;
-  background-image: linear-gradient(315deg, #212121 0%, #000 74%);
+  box-shadow: 1px 2px 4px 1px #34374C;
+  background-color: #F6F6F6;
+  background-image: linear-gradient(315deg, #212121 0%, #34374C 74%);
   padding: 15px;
 }
 
 .header a{
-  color: #fff;
+  color: #F6F6F6;
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
+  position: relative;
+  transition: 0.25s ease-in-out;
 }
 
-.header a:hover {
-  color: gold;
+.header a::before {
+  position: absolute;
+  content: "";
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: #FFD166;
+  transition: 0.25s ease-in-out;
+}
+
+.header:hover a::before {
+  width: 100%;
+}
+
+.header a::before {
+  left: 50%;
+  transform:translateX(-50%);
 }
 
 .logo {
@@ -56,11 +73,11 @@ main {
   position: absolute;
   width: 10px;
   height: 40px;
-  background: #fff;
+  background: #F6F6F6;
   transform: rotate( 
 75deg);
   border-radius: 5px;
-  border: 1px solid #fff;
+  border: 1px solid #F6F6F6;
   top: 0px;
   left: 15px;
   box-shadow: 2px 0px 20px 10px #eee;
@@ -70,9 +87,9 @@ main {
   content: '';
   width: 30px;
   height: 14px;
-  background: #000;
+  background: #34374C;
   position: absolute;
-  border: 4px solid #ffffff;
+  border: 4px solid #F6F6F6;
   border-top: none;
   border-radius: 30px;
   top: -11px;
@@ -110,7 +127,7 @@ main {
 }
 
 .chat-body {
-  color: #fff;
+  color: #F6F6F6;
   flex-direction: column;
   display: flex;
   width: 100%;
@@ -122,7 +139,7 @@ main {
 }
 
 button {
-  background: #fff;
+  background: #F6F6F6;
   color: #383838;
   border: none;
   border-radius: 5px;
@@ -143,39 +160,48 @@ button {
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: #838383;
+  background-color: #F6F6F6;
 }
 
 input.custom-input {
   border: none;
-  background-color: #838383;
   font-size: 20px;
   min-height: 45px;
-  color: #000;
+  color: #f6f6f6;
   padding-left: 15px;
+  border-radius: 25px;
+  background-color: #34374C;
 }
-
 .custom-input::placeholder {
-  color: #000;
+  color: #f6f6f6;
 }
 
 .input-container {
   height: 100%;
   display: flex;
   align-items: center;
-}
-
-.input-container input {
-  background: #838383;
-  color: #000;
-  border-radius: 5px;
-  width: 200px;
-  padding: 15px 0;
+  padding: 15px;
+  gap: 15px;
 }
 
 .input-container button {
   height: 100%;
-  background: #838383;
-  border-radius: 50%;
-  width: 80px;
+  background: #34374C;
+  width: 45px;
+  border-radius: 25px;
+  color: #f6f6f6;
 }
+
+.custom-button {
+  background-color: #EE2B47;
+  color: #F6F6F6;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.custom-button:hover {
+  filter: brightness(1.2);
+}
+
