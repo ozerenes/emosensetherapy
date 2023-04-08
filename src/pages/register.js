@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Avatar from "../components/Avatar"
 
 export default ({ handleRegister }) => {
     const [email, setEmail] = useState("");
@@ -47,6 +48,7 @@ export default ({ handleRegister }) => {
         <button type="submit">Register</button>
       </form>
       <div className="info-box">
+      <Avatar animation={"yoga"} width={350} height={350} />
       Hey person login and expole your self!
       <button className="button-outline">
           SING UP

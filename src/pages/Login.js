@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import Avatar from "../components/Avatar"
 
 export default ({ handleLogin }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [active,setActive] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +13,7 @@ export default ({ handleLogin }) => {
     };
 
     return (
-        <div className="flex-row">
+        <div className={`flex-row ${active ? "reverse" : ""}`}>
         <form className="login-box" onSubmit={handleSubmit}>
             <h2>Login</h2>
             <div className="user-box">
@@ -50,8 +52,9 @@ export default ({ handleLogin }) => {
             </div>
         </form>
         <div className="info-box">
+            <Avatar animation={"yoga"} width={350} height={350} />
             Hey person login and expole your self!
-            <button className="button-outline">
+            <button onClick={() => setActive(true)} className="button-outline">
                 SING IN
             </button>
         </div>
