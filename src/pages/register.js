@@ -11,6 +11,7 @@ export default ({ handleRegister }) => {
     };
   
     return (
+      <>
       <form className="login-box" onSubmit={handleSubmit}>
         <h2>Register</h2>
         <div className="user-box">
@@ -45,5 +46,12 @@ export default ({ handleRegister }) => {
         </div>
         <button type="submit">Register</button>
       </form>
+      <div className="info-box">
+      Hey person login and expole your self!
+      <button className="button-outline">
+          SING UP
+      </button>
+  </div>
+  </>
     );
   };

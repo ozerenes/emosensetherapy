@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -295,16 +296,13 @@ input.custom-input {
 
 
 .login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 400px;
   padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, .5);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .login-box h2 {
@@ -329,6 +327,7 @@ input.custom-input {
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   padding: 10px 0;
   font-size: 16px;
@@ -356,4 +355,37 @@ input.custom-input {
   align-items: center;
   justify-content: center;
   gap: 15px;
+}
+
+a.custom-link {
+  color: #f6f6f6;
+  text-decoration: none;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: row;
+}
+
+.info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  background: rgb(179, 27, 50);
+  background: linear-gradient(120deg, rgba(179, 27, 50, 1) 0%, rgba(238, 43, 71, 1) 100%);
+  width: 400px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #f6f6f6;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+}
+
+.button-outline {
+  border: 1px solid #f6f6f6;
+  color: #f6f6f6;
+  background-color: #EE2B47;
+  border-radius: 15px;
+  padding: 10px 15px;
 }

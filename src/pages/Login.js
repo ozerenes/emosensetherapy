@@ -11,6 +11,7 @@ export default ({ handleLogin }) => {
     };
 
     return (
+        <div className="flex-row">
         <form className="login-box" onSubmit={handleSubmit}>
             <h2>Login</h2>
             <div className="user-box">
@@ -33,6 +34,9 @@ export default ({ handleLogin }) => {
                     required
                 />
             </div>
+            <div className="gap-center mb-3">
+                <Link className="custom-link" href={"/forgot"}>Forgot your password?</Link>
+            </div>
             <div className="gap-center">
                 <button type="submit">Login</button>
                 <Link href={"/register"}>Create an account</Link>
@@ -45,5 +49,12 @@ export default ({ handleLogin }) => {
                 <button>in</button>
             </div>
         </form>
+        <div className="info-box">
+            Hey person login and expole your self!
+            <button className="button-outline">
+                SING IN
+            </button>
+        </div>
+        </div>
     );
 };
