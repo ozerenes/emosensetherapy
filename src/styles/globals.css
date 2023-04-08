@@ -221,6 +221,22 @@ input.custom-input {
   justify-content: center;
 }
 
+.icon-s {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-xs {
+  width: 20px;
+  height: 20px;
+}
+
+.gap-align {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 @keyframes mymove {
   from {
     background-color: #34374C;

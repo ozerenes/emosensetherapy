@@ -31,17 +31,49 @@ export default () => {
         <>
             <div className="chat-area">
                 <div className="chat-body">
-                    <div className="chat-answer">
+                    <div className="chat-answer gap-align">
+                        <div className="icon-s">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                            </svg>
+                        </div>
                         <div className="gray-area">
                             denemeeeeee test lorem dolor setIndex
                         </div>
                     </div>
                     <div className="chat-result">
-                        <div className="gray-area">
+                        <div className="gray-area gap-align">
                             <Writer
                                 text={message ?? "test denemeeeeee"}
                                 color={"#fff"}
                             />
+                            <div className="icon-xs">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                                    />
+                                </svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,8 +102,11 @@ export default () => {
                                 />
                             </svg>
                         </button>
-                        <Speacher/>
-                        <button className={`${avatarStatus ? "animation" : ""}`} onClick={() => setAvatarStatus(!avatarStatus)}>
+                        <Speacher />
+                        <button
+                            className={`${avatarStatus ? "animation" : ""}`}
+                            onClick={() => setAvatarStatus(!avatarStatus)}
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
