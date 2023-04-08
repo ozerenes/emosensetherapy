@@ -12,18 +12,50 @@ export default () => {
     };
 
     const handleSubmit = async () => {
+        // register
+        // const registerResult = await fetch('/api/user/register', {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //         name: 'test',
+        //         email: 'test@mail.com',
+        //         password: 'test'
+        //     }),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // });
+
+        // login
+        const loginResult = await fetch('/api/user/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                email: 'test@mail.com',
+                password: 'test'
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const loginData = await loginResult.json();
+
         const formData = new FormData();
         formData.append('file', file);
-
-        // USER PROMPT'U
-        formData.append("prompt", 'I am very sad');
+        formData.append("prompt", 'I am very sad'); // USER PROMPT'U
 
         const response = await fetch('/api/process', {
             method: 'POST',
             body: formData,
+            headers: {
+                'Authorization': `Bearer ${loginData.accessToken}`
+            }
         });
         const data = await response.json();
-        setMessage(data.gpt.response);
+
+        if (response.status === 200) {
+            setMessage(data.gpt.response);
+        } else {
+            alert(data.message);
+        }
     };
 
     return (
