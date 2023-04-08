@@ -11,9 +11,9 @@ export default ({ handleRegister }) => {
     };
   
     return (
-      <form onSubmit={handleSubmit}>
+      <form className="login-box" onSubmit={handleSubmit}>
         <h2>Register</h2>
-        <div>
+        <div className="user-box">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -23,7 +23,7 @@ export default ({ handleRegister }) => {
             required
           />
         </div>
-        <div>
+        <div className="user-box">
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -33,7 +33,7 @@ export default ({ handleRegister }) => {
             required
           />
         </div>
-        <div>
+        <div className="user-box">
           <label htmlFor="confirmPassword">Confirm Password:</label>
           <input
             type="password"
