@@ -2,9 +2,10 @@ import {analyzeEmotions} from '../services/rekognition';
 import {Configuration, OpenAIApi} from 'openai';
 import multer from "multer";
 import nc from "next-connect";
+import authorization from "../middleware/authorization";
 
 const openai = new OpenAIApi(new Configuration({
-    apiKey: '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',
+    apiKey: process.env.OPENAI_API_KEY
 }));
 const openaiModel = "text-davinci-002";
 
@@ -39,6 +40,7 @@ const handler = nc({
         res.status(404).end("Page is not found");
     },
 })
+    .use(authorization)
     .use(
         multer({storage: multer.memoryStorage()}).single("file")
     )
