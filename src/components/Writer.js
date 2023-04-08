@@ -18,7 +18,7 @@ export default ({ text , color , minHeight}) => {
   return (
     <div style={{ color: color, fontSize: "20px", minHeight: (minHeight ?? "")}}>
       {currentWords.join(" ")}
-      <span style={{ color: "#000" }}>{remainingWords.join(" ")}</span>
+      <span style={{ color: "#34374C" }}>{remainingWords.join(" ")}</span>
     </div>
   );
 };

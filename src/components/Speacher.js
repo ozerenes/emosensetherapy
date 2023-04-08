@@ -59,6 +59,7 @@ export default () => {
 
   return (
     <form className="contain" onSubmit={handleSpeak}>
+      <div className="center-container">
       <div className="select">
         <select value={currentVoice ? currentVoice.name : ''} onChange={handleVoiceChange}>
           {voices.map(v => (
@@ -70,6 +71,7 @@ export default () => {
       <input type="text" value={text} onChange={handleTextChange} />
 
       <button type="submit">🗣</button>
+      </div>
     </form>
   );
 };

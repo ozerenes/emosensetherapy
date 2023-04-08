@@ -2,12 +2,12 @@ import React from 'react';
 import Lottie from 'react-lottie';
 import animationData from '../assets/avatar';
 
-const LottieAnimation = () => {
+const LottieAnimation = ({width,height,animation}) => {
 
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: animationData,
+    animationData: animation == "avatar" ? animationData : "",
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
@@ -17,8 +17,8 @@ const LottieAnimation = () => {
     <div>
       <Lottie 
         options={defaultOptions}
-        height={400}
-        width={400}
+        height={height ?? 100 }
+        width={width ?? 100}
       />
     </div>
   );

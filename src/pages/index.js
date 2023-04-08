@@ -15,7 +15,7 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </Head>
             <Writer text={text} color={"#fff"} minHeight={"80px"} />
-            <Avatar />
+            <Avatar animation={"avatar"} width={400} height={400} />
             <Link className='custom-button' href={"/ChatAi"}>Talk</Link>
         </>
     )

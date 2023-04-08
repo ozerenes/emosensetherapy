@@ -10,8 +10,12 @@ html {
   background-color: #34374C;
 }
 
+input:focus,
+input:active {
+  all: inherit;
+}
+
 main {
-  padding: 0 14em;
   height: calc(100vh - 80px);
   display: flex;
   align-items: center;
@@ -30,7 +34,7 @@ main {
   padding: 15px;
 }
 
-.header a{
+.header a {
   color: #F6F6F6;
   font-weight: bold;
   font-size: 16px;
@@ -39,7 +43,7 @@ main {
   transition: 0.25s ease-in-out;
 }
 
-.header a::before {
+.header a:not(.logo):before {
   position: absolute;
   content: "";
   bottom: -5px;
@@ -49,13 +53,13 @@ main {
   transition: 0.25s ease-in-out;
 }
 
-.header:hover a::before {
+.header a:not(.logo):hover:before {
   width: 100%;
 }
 
-.header a::before {
+.header a:not(.logo):before {
   left: 50%;
-  transform:translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .logo {
@@ -74,8 +78,7 @@ main {
   width: 10px;
   height: 40px;
   background: #F6F6F6;
-  transform: rotate( 
-75deg);
+  transform: rotate(75deg);
   border-radius: 5px;
   border: 1px solid #F6F6F6;
   top: 0px;
@@ -93,13 +96,12 @@ main {
   border-top: none;
   border-radius: 30px;
   top: -11px;
-  transform: rotate( 
--15deg);
+  transform: rotate(-15deg);
   left: -4px;
   box-shadow: 1px 11px 5px #0e0402;
 }
 
-.home{
+.home {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -121,7 +123,7 @@ main {
   display: flex;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 320px);
+  height: calc(100% - 30px);
   justify-content: flex-end;
   flex-direction: column;
 }
@@ -131,6 +133,7 @@ main {
   flex-direction: column;
   display: flex;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .chat-result {
@@ -146,8 +149,7 @@ button {
   padding: 5px 7px;
   font-size: 14px;
   font-weight: bold;
-  cursor: pointer
-  ;
+  cursor: pointer;
 }
 
 .gray-area {
@@ -171,7 +173,9 @@ input.custom-input {
   padding-left: 15px;
   border-radius: 25px;
   background-color: #34374C;
+  width: 100%;
 }
+
 .custom-input::placeholder {
   color: #f6f6f6;
 }
@@ -182,12 +186,14 @@ input.custom-input {
   align-items: center;
   padding: 15px;
   gap: 15px;
+  width: 100%;
 }
 
 .input-container button {
   height: 100%;
   background: #34374C;
   width: 45px;
+  min-width: 45px;
   border-radius: 25px;
   color: #f6f6f6;
 }
@@ -205,3 +211,68 @@ input.custom-input {
   filter: brightness(1.2);
 }
 
+.animation {
+  animation: mymove 1.5s infinite;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes mymove {
+  from {
+    background-color: #34374C;
+  }
+
+  to {
+    background-color: #EE2B47;
+  }
+}
+
+.hamburger-menu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  z-index: 99;
+  margin-right: 15px;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 0 14em;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #34374C;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9;
+    gap: 15px;
+  }
+
+  .home.active {
+    transform: translateX(0);
+  }
+
+  .home a {
+    font-size: 35px;
+  }
+}
