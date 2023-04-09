@@ -16,7 +16,7 @@ export default ({ handleLogin }) => {
     return (
         <div className={`flex-row ${active ? "reverse" : ""}`}>
         {
-            active ? <form className={`login-box ${active ? "active" : ""}`} onSubmit={handleSubmit}>
+            !active ? <form className={`login-box ${active ? "active" : ""}`} onSubmit={handleSubmit}>
             <h2>Login</h2>
             <div className="user-box">
                 <label htmlFor="email">Email:</label>
@@ -54,7 +54,7 @@ export default ({ handleLogin }) => {
             </div>
         </form>
         :
-        <form className="login-box" onSubmit={handleSubmit}>
+        <form className={`login-box ${active ? "active" : ""}`} onSubmit={handleSubmit}>
         <h2>Register</h2>
         <div className="user-box">
           <label htmlFor="email">Email:</label>
@@ -92,7 +92,7 @@ export default ({ handleLogin }) => {
         <div className={`info-box ${active ? "active" : ""}`}>
             <Avatar animation={"yoga"} width={350} height={350} />
             <button onClick={() => setActive(!active)} className="button-outline">
-                {active ? "SING IN" : "SIGN UP"}
+                {!active ? "SING IN" : "SIGN UP"}
             </button>
         </div>
         </div>
