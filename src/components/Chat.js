@@ -80,7 +80,7 @@ export default () => {
                                 />
                             </svg>
                         </div>
-                        <div className="gray-area">
+                        <div className="gray-area" style={{fontSize: "20px"}}>
                             denemeeeeee test lorem dolor setIndex
                         </div>
                     </div>

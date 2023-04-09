@@ -44,8 +44,8 @@ export default () => {
             </button>
             <div className={`home ${hamburger ? "active" : ""}`}>
                 <Link href="/">Home</Link>
-                <Link href="/Speacher">Open</Link>
-                <Link href="/Settings">Settings</Link>
+                <Link href="/ChatAi">Talk</Link>
+                <Link href="/Logout">Logout</Link>
             </div>
         </nav>
     );

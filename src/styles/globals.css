@@ -108,7 +108,7 @@ main {
   top: -11px;
   transform: rotate(-15deg);
   left: -4px;
-  box-shadow: 1px 11px 5px #0e0402;
+  box-shadow: 1px 11px 5px #34374c96;
 }
 
 .home {
@@ -212,9 +212,9 @@ input.custom-input {
   background-color: var(--color-red);
   color: var(--color-white);
   text-decoration: none;
-  padding: 15px 30px;
-  border-radius: 20px;
-  font-size: 18px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .custom-button:hover {
@@ -265,7 +265,7 @@ input.custom-input {
   margin-right: 15px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   main {
     padding: 0 14em;
   }
@@ -416,3 +416,4 @@ a.custom-link {
   border-radius: 15px;
   padding: 10px 15px;
 }
+
