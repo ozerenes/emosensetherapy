@@ -6,6 +6,7 @@ export default ({ handleLogin }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [active,setActive] = useState(false);
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,7 +15,8 @@ export default ({ handleLogin }) => {
 
     return (
         <div className={`flex-row ${active ? "reverse" : ""}`}>
-        <form className="login-box" onSubmit={handleSubmit}>
+        {
+            active ? <form className={`login-box ${active ? "active" : ""}`} onSubmit={handleSubmit}>
             <h2>Login</h2>
             <div className="user-box">
                 <label htmlFor="email">Email:</label>
@@ -51,11 +53,46 @@ export default ({ handleLogin }) => {
                 <button>in</button>
             </div>
         </form>
-        <div className="info-box">
+        :
+        <form className="login-box" onSubmit={handleSubmit}>
+        <h2>Register</h2>
+        <div className="user-box">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="user-box">
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <div className="user-box">
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+        }
+        <div className={`info-box ${active ? "active" : ""}`}>
             <Avatar animation={"yoga"} width={350} height={350} />
-            Hey person login and expole your self!
-            <button onClick={() => setActive(true)} className="button-outline">
-                SING IN
+            <button onClick={() => setActive(!active)} className="button-outline">
+                {active ? "SING IN" : "SIGN UP"}
             </button>
         </div>
         </div>
