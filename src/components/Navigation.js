@@ -1,8 +1,19 @@
 import Link from "next/link";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
 export default () => {
     const [hamburger, setHamburger] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        setLoggedIn(localStorage.getItem("token") !== null);
+    }, []);
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        window.location.href = "/Login";
+    }
+
     return (
         <nav className="header">
             <Link href="/" className="logo"></Link>
@@ -45,7 +56,11 @@ export default () => {
             <div className={`home ${hamburger ? "active" : ""}`}>
                 <Link href="/">Home</Link>
                 <Link href="/ChatAi">Talk</Link>
-                <Link href="/Logout">Logout</Link>
+                {loggedIn ? (
+                    <a onClick={handleLogout}>Logout</a>
+                ) : (
+                    <Link href="/Login">Login</Link>
+                )}
             </div>
         </nav>
     );

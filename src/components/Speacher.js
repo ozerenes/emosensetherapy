@@ -62,8 +62,8 @@ export default () => {
       <div className="center-container">
       <div className="select">
         <select value={currentVoice ? currentVoice.name : ''} onChange={handleVoiceChange}>
-          {voices.map(v => (
-            <option value={v.name}>{`${v.name}`}</option>
+          {voices.map((v, index) => (
+            <option key={index} value={v.name}>{`${v.name}`}</option>
           ))}
         </select>
       </div>

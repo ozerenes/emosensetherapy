@@ -1,8 +1,9 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Avatar from "../components/Avatar";
+import axios from "axios";
 
-export default ({ handleLogin }) => {
+export default (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [active, setActive] = useState(false);
@@ -10,8 +11,33 @@ export default ({ handleLogin }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleLogin(email, password);
+        if (!active)
+            handleLogin(email, password);
+        else
+            handleRegister(email, password, confirmPassword);
     };
+
+    const handleLogin = async (email, password) => {
+        const response = await axios.post('/api/user/login', {
+            email: email,
+            password: password,
+        });
+        localStorage.setItem("token", response.data.accessToken);
+        window.location.href = "/ChatAi";
+    }
+
+    const handleRegister = async (email, password, confirmPassword) => {
+        if (password !== confirmPassword)
+            return alert("Passwords do not match");
+
+        const response = await axios.post('/api/user/register', {
+            name: email,
+            email: email,
+            password: password,
+        });
+        localStorage.setItem("token", response.data.accessToken);
+        window.location.href = "/ChatAi";
+    }
 
     return (
         <div className={`flex-row ${active ? "reverse" : ""}`}>
@@ -98,7 +124,7 @@ export default ({ handleLogin }) => {
                 </form>
             )}
             <div className={`info-box ${active ? "active" : ""}`}>
-                <Avatar animation={"yoga"} width={350} height={350} />
+                <Avatar animation={"yoga"} width={350} height={350}/>
                 <button
                     onClick={() => setActive(!active)}
                     className="button-outline"

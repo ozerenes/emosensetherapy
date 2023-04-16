@@ -20,12 +20,12 @@ model User {
 }
 
 model ChatSession {
-  id       Int           @id @default(autoincrement())
-  title    String
-  userId   Int
-  user     User          @relation(fields: [userId], references: [id])
-  messages ChatMessage[]
-  createdAt DateTime     @default(now())
+  id        Int           @id @default(autoincrement())
+  title     String
+  userId    Int
+  user      User          @relation(fields: [userId], references: [id])
+  messages  ChatMessage[]
+  createdAt DateTime      @default(now())
 }
 
 model ChatMessage {
@@ -33,7 +33,7 @@ model ChatMessage {
   chatSessionId Int
   chatSession   ChatSession     @relation(fields: [chatSessionId], references: [id])
   role          ChatMessageRole @default(user)
-  text          String
+  text          String          @db.Text
   createdAt     DateTime        @default(now())
 }
 
