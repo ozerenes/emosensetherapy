@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Avatar from "../components/Avatar";
+import yoga from "../assert/yoga"
 
 export default ({ handleLogin }) => {
     const [email, setEmail] = useState("");
@@ -98,7 +99,7 @@ export default ({ handleLogin }) => {
                 </form>
             )}
             <div className={`info-box ${active ? "active" : ""}`}>
-                <Avatar animation={"yoga"} width={350} height={350} />
+                <Avatar animation={yoga} width={350} height={350} />
                 <button
                     onClick={() => setActive(!active)}
                     className="button-outline"

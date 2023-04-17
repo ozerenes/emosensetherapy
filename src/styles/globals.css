@@ -163,8 +163,13 @@ button {
 }
 
 .gray-area {
-  width: fit-content;
-  position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    background-color: var(--color-red);
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 12px #34374c7a;
 }
 
 .chat-footer {
@@ -312,7 +317,7 @@ input.custom-input {
   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  transition: ease all 1s;
+  transition: ease all 0.5s;
 }
 
 .login-box.active {
@@ -398,7 +403,7 @@ a.custom-link {
   border-bottom-right-radius: 10px;
   color: var(--color-white);
   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
-  transition: ease all 1s;
+  transition: ease all 0.5s;
 }
 
 .info-box.active {
@@ -417,3 +422,15 @@ a.custom-link {
   padding: 10px 15px;
 }
 
+.avatar-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+
+.flex-column {
+  flex-direction: column;
+}

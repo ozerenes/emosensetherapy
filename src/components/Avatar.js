@@ -1,14 +1,12 @@
 import React from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../assets/avatar';
-import yogaData from "../assets/yoga"
 
 const LottieAnimation = ({width,height,animation}) => {
 
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: animation == "avatar" ? animationData : yogaData,
+    animationData: animation,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
@@ -18,8 +16,8 @@ const LottieAnimation = ({width,height,animation}) => {
     <div>
       <Lottie 
         options={defaultOptions}
-        height={height ?? 100 }
-        width={width ?? 100}
+        height={height ?? 60 }
+        width={width ?? 60}
       />
     </div>
   );

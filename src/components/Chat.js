@@ -27,28 +27,28 @@ export default () => {
         // });
 
         // login
-        const loginResult = await fetch('/api/user/login', {
-            method: 'POST',
+        const loginResult = await fetch("/api/user/login", {
+            method: "POST",
             body: JSON.stringify({
-                email: 'test@mail.com',
-                password: 'test'
+                email: "test@mail.com",
+                password: "test",
             }),
             headers: {
-                'Content-Type': 'application/json'
-            }
-        })
+                "Content-Type": "application/json",
+            },
+        });
         const loginData = await loginResult.json();
 
         const formData = new FormData();
-        formData.append('file', file);
-        formData.append("prompt", 'I am very sad'); // USER PROMPT'U
+        formData.append("file", file);
+        formData.append("prompt", "I am very sad"); // USER PROMPT'U
 
         const response = await fetch("/api/process", {
             method: "POST",
             body: formData,
             headers: {
-                'Authorization': `Bearer ${loginData.accessToken}`
-            }
+                Authorization: `Bearer ${loginData.accessToken}`,
+            },
         });
         const data = await response.json();
 
@@ -80,32 +80,32 @@ export default () => {
                                 />
                             </svg>
                         </div>
-                        <div className="gray-area" style={{fontSize: "20px"}}>
+                        <div className="gray-area" style={{ fontSize: "20px" }}>
                             denemeeeeee test lorem dolor setIndex
                         </div>
                     </div>
-                    <div className="chat-result">
+                    <div className="chat-result gap-align">
                         <div className="gray-area gap-align">
                             <Writer
                                 text={message ?? "test denemeeeeee"}
-                                color={"#fff"}
+                                color={"#fff"} bg={"#EE2B47"}
                             />
-                            <div className="icon-xs">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={1.5}
-                                    stroke="currentColor"
-                                    className="w-6 h-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
-                                    />
-                                </svg>
-                            </div>
+                        </div>
+                        <div className="icon-s">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                                />
+                            </svg>
                         </div>
                     </div>
                 </div>

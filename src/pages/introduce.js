@@ -1,4 +1,5 @@
 import CustomInput from "@/components/CustomInput";
+import AvatarSelect from "@/components/AvatarSelect";
 import React, { useState } from "react";
 
 function PsychologySurvey() {
@@ -50,6 +51,11 @@ function PsychologySurvey() {
                         "What do you feel is missing from your life or what brings you joy?"
                     }
                 />
+                <br />
+                <div className="user-box">
+                    <label>Select your avatar</label>
+                </div>
+                <AvatarSelect />
                 <br />
                 <button className="custom-button" type="submit">
                     Submit
