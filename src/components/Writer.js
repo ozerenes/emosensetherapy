@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default ({ text , color , minHeight, animate}) => {
+export default ({ text , color , minHeight, animate , bg , center}) => {
   const [index, setIndex] = useState(animate ? 0 : text.split(" ").length);
 
   useEffect(() => {
