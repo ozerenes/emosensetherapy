@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-export default ({ text , color , minHeight,bg,center}) => {
-  const [index, setIndex] = useState(0);
+export default ({ text , color , minHeight, animate}) => {
+  const [index, setIndex] = useState(animate ? 0 : text.split(" ").length);
 
   useEffect(() => {
     const interval = setInterval(() => {
