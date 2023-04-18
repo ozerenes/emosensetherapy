@@ -55,7 +55,8 @@ export default () => {
             </button>
             <div className={`home ${hamburger ? "active" : ""}`}>
                 <Link href="/">Home</Link>
-                <Link href="/ChatAi">Talk</Link>
+                <Link href="/ChatAi">CogniTalk</Link>
+                <Link href="/introduce">Introduce</Link>
                 {loggedIn ? (
                     <a onClick={handleLogout}>Logout</a>
                 ) : (

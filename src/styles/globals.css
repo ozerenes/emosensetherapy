@@ -220,6 +220,10 @@ input.custom-input {
   padding: 5px 15px;
   border-radius: 5px;
   font-size: 16px;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-button:hover {
@@ -357,6 +361,21 @@ input.custom-input {
   color: var(--color-white);
   pointer-events: none;
   transition: .5s;
+}
+
+.show-password {
+  position: absolute;
+  right: 15px;
+  top: 30px;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
 }
 
 .line {
