@@ -5,7 +5,7 @@ import Link from "next/link";
 import avatarLotie from "@/assets/avatar"
 
 export default function Home() {
-    const text = `Welcome to our AI-based therapy program.
+    const text = `Merhaba Welcome to our AI-based therapy program.
      We're here to help you explore your thoughts and feelings and access treatment in a supportive environment.
       Our program uses customized algorithms to create a treatment plan that addresses your specific needs and concerns.
        Our goal is to provide you with the tools you need to increase happiness and fulfillment in your life.
