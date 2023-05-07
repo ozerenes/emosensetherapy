@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {AiMessages} from "./AiMessages";
 import {UserMessages} from "./UserMessages";
+import CustomSelect from "./CustomSelect"
 import axios from "axios";
 
 export default () => {
@@ -8,6 +9,12 @@ export default () => {
     const [avatarStatus, setAvatarStatus] = useState(false);
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
+    const [selectedLang, setSelectedLang] = useState(null)
+
+    const options = [
+        {label: "TR", value: 1},
+        {label: "EN", value: 2}
+    ]
 
     useEffect(() => {
         fetchHistory().then();
@@ -30,6 +37,7 @@ export default () => {
 
         const response = await axios.post('/api/chat/message', {
             message: message,
+            language: selectedLang
         }, {
             headers: {
                 'Content-Type': 'application/json',
@@ -92,6 +100,8 @@ export default () => {
                                 />
                             </svg>
                         </button>
+
+                        <CustomSelect options={options} onSelect={setSelectedLang}/>
                     
                         <button
                             className={`${avatarStatus ? "animation" : ""}`}
