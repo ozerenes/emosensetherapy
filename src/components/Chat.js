@@ -37,7 +37,6 @@ export default () => {
 
         const response = await axios.post('/api/chat/message', {
             message: message,
-            language: selectedLang
         }, {
             headers: {
                 'Content-Type': 'application/json',
