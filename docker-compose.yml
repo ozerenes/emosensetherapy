@@ -1,6 +1,21 @@
 version: '3'
 
 services:
+  emosense-app:
+    container_name: emosense-app
+    image: node:18.16.0
+    tty: true
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: bash -c "npm install --force && npx prisma generate && npm run dev"
+    ports:
+      - "5555:5555"
+    depends_on:
+      - emosense-mysql
+    restart: always
+
   emosense-mysql:
     container_name: emosense-mysql
     image: mysql:8.0.32
