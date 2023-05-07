@@ -1,5 +1,7 @@
 import CustomInput from "@/components/CustomInput";
 import AvatarSelect from "@/components/AvatarSelect";
+import Speacher from "@/components/Speacher";
+
 import React, { useState } from "react";
 
 function PsychologySurvey() {
@@ -56,6 +58,7 @@ function PsychologySurvey() {
                     <label>Select your avatar</label>
                 </div>
                 <AvatarSelect />
+                <Speacher/>
                 <br />
                 <button className="custom-button" type="submit">
                     Submit

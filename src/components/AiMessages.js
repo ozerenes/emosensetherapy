@@ -1,15 +1,9 @@
 import Writer from "@/components/Writer";
 
-export const AiMessage = ({ message, animate }) => {
+export const AiMessages = ({ message , animate }) => {
     return <>
-        <div className="chat-result">
-            <div className="gray-area gap-align">
-                <Writer
-                    text={message}
-                    color={"#fff"}
-                    animate={animate}
-                />
-                <div className="icon-xs">
+        <div className="chat-answer gap-align">
+        <div className="icon-xs">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -25,6 +19,13 @@ export const AiMessage = ({ message, animate }) => {
                         />
                     </svg>
                 </div>
+            <div className="gray-area" style={{fontSize: "20px"}}>
+                <Writer
+                    text={message}
+                    color={"#fff"}
+                    animate={animate}
+                    bg={"#ee2b47"}
+                />
             </div>
         </div>
     </>
