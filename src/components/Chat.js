@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
-import {UserMessage} from "./UserMessage";
-import {AiMessage} from "./AiMessage";
-import Speacher from "./Speacher";
+import {AiMessages} from "./AiMessages";
+import {UserMessages} from "./UserMessages";
 import axios from "axios";
 
 export default () => {
@@ -53,22 +52,22 @@ export default () => {
             <div className="chat-area">
                 <div className="chat-body">
                     {messages.map((message, index) => {
-                        return message.role === 'user' ?
-                            <UserMessage
-                                key={index}
-                                message={message.text}
-                            />
-                            :
-                            <AiMessage
+                        return message.role !== 'user' ?
+                            <AiMessages
                                 key={index}
                                 message={message.text}
                                 animate={index === messages.length - 1}
+                            />
+                            :
+                            <UserMessages
+                                key={index}
+                                message={message.text}
                             />;
                     })}
                 </div>
                 <div className="chat-footer">
                     <div className="input-container">
-                        <input type="file" onChange={handleFileChange}/>
+                        {/* <input type="file" onChange={handleFileChange}/> */}
                         <input
                             className="custom-input"
                             type="text"
@@ -77,7 +76,7 @@ export default () => {
                             onChange={(e) => setMessage(e.target.value)}
                         />
 
-                        <button onClick={sendMessage}>
+                        <button style={{paddingTop: "8px"}} onClick={sendMessage}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -93,7 +92,7 @@ export default () => {
                                 />
                             </svg>
                         </button>
-                        <Speacher/>
+                    
                         <button
                             className={`${avatarStatus ? "animation" : ""}`}
                             onClick={() => setAvatarStatus(!avatarStatus)}

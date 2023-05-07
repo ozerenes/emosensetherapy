@@ -68,7 +68,7 @@ export default () => {
         </select>
       </div>
 
-      <input type="text" value={text} onChange={handleTextChange} />
+      {/* <input type="text" value={text} onChange={handleTextChange} /> */}
 
       <button type="submit">🗣</button>
       </div>

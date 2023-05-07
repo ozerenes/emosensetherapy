@@ -185,10 +185,10 @@ input.custom-input {
   font-size: 20px;
   min-height: 45px;
   color: var(--color-white);
-  padding-left: 15px;
   border-radius: 25px;
   background-color: var(--color-theme);
   width: 100%;
+  padding: 15px;
 }
 
 .custom-input::placeholder {
