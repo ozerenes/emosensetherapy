@@ -1,16 +1,9 @@
--Historyi nasıl tuttğuna bakma ve promta ekleme (öa) - 4 saat
--database açılması ve kullanıcıların kayıt işlemlerinin yapılması (öa) - 6 saat 
--Frontendeki gelen responsu gösterme (eö) - 3 saat
--Frontenden backende kullanıcın girdiği yazıyı gönderme (eö) - 1 saat
--Sesi backende text olarka gönmderme(eö) - 1 saat
--Login ve sing up sayfalarının yapılması(eö) - 6 saaat
-
-
-
+-Sesi backende text olarka gönmderme(öa) - 1 saat
+-introduce sayfasının yapılıp bağlanması (öa) - 8 saat
+-frontend ui bugfix (eö) - 6 saat
 ============================================================================
 
--localization (2 saat)
--state management (1 saat)
--tasarım düzenlemeleri (1 saat)
--kullanıcının kendine göre bir avatar ve ses seçimi yapması (1 saat )
--kullanıcının girişteki sorulara verdiği cevaba göre promt belirlenmesi (2 saat)
+-localization (öa)  2 saat
+-notification (eö)  2 saat
+-kullanıcı fotoğrafının çekilmesi (öa) 2 saat
+-avatar custimisation (eö) 3 saat
