@@ -24,7 +24,6 @@ export const AiMessages = ({ message , animate }) => {
                     text={message}
                     color={"#fff"}
                     animate={animate}
-                    bg={"#ee2b47"}
                 />
             </div>
         </div>

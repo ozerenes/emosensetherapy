@@ -5,12 +5,7 @@ import Link from "next/link";
 import avatarLotie from "@/assets/avatar"
 
 export default function Home() {
-    const text = `Welcome to our AI-based therapy program.
-     We're here to help you explore your thoughts and feelings and access treatment in a supportive environment.
-      Our program uses customized algorithms to create a treatment plan that addresses your specific needs and concerns.
-       Our goal is to provide you with the tools you need to increase happiness and fulfillment in your life.
-        You can rest assured that our AI therapy program is safe and confidential.
-         If you need further assistance, our technical support is happy to help you at every step.`;
+    const text = `Discover your happiness with customized treatment plans!`;
 
          const avatars = [
             "https://svgsilh.com/svg/1299642.svg",
@@ -35,7 +30,7 @@ export default function Home() {
                     content="width=device-width, initial-scale=1"
                 />
             </Head>
-            <Writer text={text} color={"#fff"} minHeight={"80px"} />
+            <Writer fontSize={"32px"} text={text} color={"#fff"} minHeight={"80px"} />
             <Avatar animation={avatarLotie} width={400} height={400} />
             <Link className="custom-button" href={"/ChatAi"}>
                 CogniTalk
