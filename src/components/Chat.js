@@ -25,6 +25,12 @@ export default () => {
         setFile(selectedFile);
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            sendMessage()
+          }
+    };
+
     const sendMessage = async () => {
         setMessages(messages => [
             ...messages,
@@ -81,6 +87,7 @@ export default () => {
                             placeholder="Text here"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
+                            onKeyDown={handleKeyDown}
                         />
 
                         <button style={{paddingTop: "8px"}} onClick={sendMessage}>
