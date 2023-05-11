@@ -1,6 +1,8 @@
 import Writer from "@/components/Writer";
+import Avatar from "@/components/Avatar";
+import loading from "@/assets/loading.json";
 
-export const AiMessages = ({ message , animate }) => {
+export const AiMessages = ({ message , animate , loader }) => {
     return <>
         <div className="chat-answer gap-align">
         <div className="icon-xs">
@@ -25,6 +27,9 @@ export const AiMessages = ({ message , animate }) => {
                     color={"#fff"}
                     animate={animate}
                 />
+                {
+                    loader &&  <Avatar animation={loading} width={150} height={100} />
+                }
             </div>
         </div>
     </>

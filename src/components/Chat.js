@@ -10,6 +10,7 @@ export default () => {
     const [message, setMessage] = useState("");
     const [messages, setMessages] = useState([]);
     const [selectedLang, setSelectedLang] = useState(null)
+    const [loader, setLoader] = useState(false)
 
     const options = [
         {label: "TR", value: 1},
@@ -32,6 +33,7 @@ export default () => {
     };
 
     const sendMessage = async () => {
+        setLoader(true)
         setMessages(messages => [
             ...messages,
             {
@@ -70,6 +72,7 @@ export default () => {
                                 key={index}
                                 message={message.text}
                                 animate={index === messages.length - 1}
+                                loader={loader}
                             />
                             :
                             <UserMessages
