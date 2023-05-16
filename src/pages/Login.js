@@ -178,7 +178,7 @@ export default (props) => {
                     onClick={() => setActive(!active)}
                     className="button-outline"
                 >
-                    {!active ? "SING IN" : "SIGN UP"}
+                    {active ? "SING IN" : "SIGN UP"}
                 </button>
             </div>
         </div>
