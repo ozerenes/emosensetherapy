@@ -45,6 +45,8 @@ export default () => {
 
         const response = await axios.post('/api/chat/message', {
             message: message,
+            selectedLang: selectedLang,
+            file: file
         }, {
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +85,7 @@ export default () => {
                 </div>
                 <div className="chat-footer">
                     <div className="input-container">
-                        {/* <input type="file" onChange={handleFileChange}/> */}
+                         <input type="file" onChange={handleFileChange}/>
                         <input
                             className="custom-input"
                             type="text"

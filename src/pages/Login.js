@@ -4,7 +4,7 @@ import Avatar from "../components/Avatar";
 import axios from "axios";
 import yoga from "../assets/yoga";
 
-export default (props) => {
+export default () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [active, setActive] = useState(false);
