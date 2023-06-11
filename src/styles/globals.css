@@ -6,7 +6,7 @@
 }
 
 :root {
-    --color-theme: #34374C;
+    --color-theme: #010e15;
     --color-white: #F6F6F6;
     --color-golden: #FFD166;
     --color-pink: #e6bbb5;
@@ -32,6 +32,11 @@ main {
     justify-content: center;
     flex-direction: column;
     gap: 45px;
+}
+
+nav {
+    position: fixed;
+    width: 100vw;
 }
 
 .header {

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import {useEffect, useState} from "react";
+import Avatar from "@/components/Avatar";
+import rook from "@/assets/rook.json"
 
 export default () => {
     const [hamburger, setHamburger] = useState(false);
@@ -16,7 +18,9 @@ export default () => {
 
     return (
         <nav className="header">
-            <Link href="/" className="logo"></Link>
+            <Link href="/">
+                <Avatar animation={rook} width={60} height={40} />
+            </Link>
             <button
                 className={"hamburger-menu"}
                 onClick={() => setHamburger(!hamburger)}
@@ -55,12 +59,11 @@ export default () => {
             </button>
             <div className={`home ${hamburger ? "active" : ""}`}>
                 <Link href="/">Home</Link>
-                <Link href="/ChatAi">CogniTalk</Link>
-                <Link href="/introduce">Introduce</Link>
+                <Link href="/Play">Play</Link>
                 {loggedIn ? (
                     <a onClick={handleLogout}>Logout</a>
                 ) : (
-                    <Link href="/Login">Login</Link>
+                    <Link href="/Login">Connect</Link>
                 )}
             </div>
         </nav>

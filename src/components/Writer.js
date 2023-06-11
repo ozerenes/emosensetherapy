@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default ({ text , color , minHeight, animate , bg , center, fontSize}) => {
+export default ({ text , color , minHeight, animate , bg , center, fontSize,textWrap}) => {
   const [index, setIndex] = useState(animate ? 0 : text.split(" ").length);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default ({ text , color , minHeight, animate , bg , center, fontSize}) =>
   const remainingWords = words.slice(index);
 
   return (
-    <div style={{ color: color,textAlign: center ? "center" : "", fontSize: fontSize ?? "20px", minHeight: (minHeight ?? "")}}>
+    <div style={{ textWrap: textWrap ?? "",color: color,textAlign: center ? "center" : "", fontSize: fontSize ?? "20px", minHeight: (minHeight ?? "")}}>
       {currentWords.join(" ")}
       <span style={{ color: bg ?? "#34374C" }}>{remainingWords.join(" ")}</span>
     </div>

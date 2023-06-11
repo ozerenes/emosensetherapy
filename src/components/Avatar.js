@@ -1,10 +1,10 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-const LottieAnimation = ({width,height,animation}) => {
+const LottieAnimation = ({width,height,animation,radius,loop}) => {
 
   const defaultOptions = {
-    loop: true,
+    loop: loop ?? true,
     autoplay: true,
     animationData: animation,
     rendererSettings: {
@@ -13,7 +13,7 @@ const LottieAnimation = ({width,height,animation}) => {
   };
 
   return (
-    <div>
+    <div style={{borderRadius: radius ?? "",overflow: "hidden"}}>
       <Lottie 
         options={defaultOptions}
         height={height ?? 60 }
