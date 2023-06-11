@@ -33,7 +33,7 @@ export default function Home() {
             <Writer fontSize={"32px"} text={text} color={"#fff"} minHeight={"80px"} />
             <Avatar animation={avatarLotie} width={400} height={400} />
             <Link className="custom-button" href={"/ChatAi"}>
-                CogniTalk
+                 CogniTalk
             </Link>
         </>
     );
